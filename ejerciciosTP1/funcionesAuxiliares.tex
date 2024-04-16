@@ -1,0 +1,18 @@
+
+\aux{gananciaXApuesta}{i:\nat, j:\nat, a:\TLista{\TLista{\float}}, p:\TLista{\TLista{\float}}, e:\TLista{\TLista{\nat}}, t:\TLista{\TLista{\float}}}{\float}
+{
+t[i][j-1] * p[i][e[i][j-1]] * a[i][e[i][j-1]]
+}
+
+\aux{fondoCom\'un}{j:\nat,w:\TLista{\bool} a:\TLista{\TLista{\float}}, p:\TLista{\TLista{\float}},e:\TLista{\TLista{\nat}}, t:\TLista{\TLista{\float}}}{\float}
+{
+$\sum\limits_{i=0}\limits^{|w|}$ if w[i]=true then gananciaXApuesta(i,j,a,p,e,t) else 0 
+}
+
+
+\aux{pagoActualizado}{i:\nat, w:\TLista{\bool} j:\nat, a:\TLista{\TLista{\float}}, p:\TLista{\TLista{\float}}, e:\TLista{\TLista{\nat}}, t:\TLista{\TLista{\float}}}{\float}
+{
+if w[i]=true then \frac{fondoCom\'un(j,w,a,p,e,t)}{|w|} else \frac{fondoCom\'un(j,w,a,p,e,t}{|w|} + gananciaXApuesta(i,j,a,p,e,t)
+}
+
+
