@@ -3,11 +3,15 @@
      \requiere{0\leq individuo < | cooperan| \wedge cooperan = Co}
      \asegura{\paraTodo[unalinea]{i}{\ent}{0\leq i < |cooperan| \wedge i \neq individuo \implicaLuego cooperan[i] = Co[i]}}
      \asegura{cooperan[individuo] = true \iff \existe[unalinea]{v,w}{\TLista{\bool}} 
-     {indivduoEstaCoopeando(w,individuo,Co) \wedge \neg individuoEstaCooperando(v,individuo,Co) \wedge
-     \existe[unalinea]{s,t}{\TLista{\TLista{\float}}}{esTrayectoria(recursos,w,apuestas,ágos,eventos,s) \wedge 
+     {indivduoEstaCoopeando(w,individuo,Co) \wedge \\
+     \neg individuoEstaCooperando(v,individuo,Co) \wedge \\
+     \existe[unalinea]{s,t}{\TLista{\TLista{\float}}}{esTrayectoria(recursos,w,apuestas,ágos,eventos,s) \wedge \\
      
      
-     esTrayectoria(recursos,v,apuestas,pagos,eventos,t) \yLuego s[individuo][|s[individuo]|-1] 	\geq t[individuo][|t[individuo]|-1] }}}
+     esTrayectoria(recursos,v,apuestas,pagos,eventos,t) \yLuego \\
+     s[individuo][|s[individuo]|-1] 	\geq t[individuo][|t[individuo]|-1] }}}
+
+     \vspace{0.2cm}
 
      \pred{individuoEst\'aCooperando}{w : \TLista{\bool}, i : \nat, c : \TLista{\bool}}{
      \paraTodo[unalinea]{j}{\ent}{0 \leq j < |s| \wedge i\neq j \implicaLuego w[i] = c[i]} \wedge w[i]=True
