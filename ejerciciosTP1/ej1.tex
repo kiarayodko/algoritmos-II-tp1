@@ -1,0 +1,6 @@
+\begin{proc}{redistribucionDeLosFrutos}{\In recursos : \TLista{\float}, \In cooperan : \TLista{\Bool}}{\TLista{\float}}
+	
+	\requiere{|recursos|=|cooperan|}
+	\asegura{{\paraTodo[unalinea]{i}{\ent}{0\leq i < |recursos| \implicaLuego  \IfThenElse{cooperan[i]}{res[i]= \frac{fondoMonetario}{|recursos|}}{res[i]= \frac{fondoMonetario}{|recursos|}+recursos[i]}}}}
+	%preguntar como hacer que se vea toda la linea!!!!!
+\end{proc}
