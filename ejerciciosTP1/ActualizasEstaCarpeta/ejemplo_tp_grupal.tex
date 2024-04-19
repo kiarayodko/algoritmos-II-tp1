@@ -1,0 +1,148 @@
+\documentclass[10pt,a4paper]{article}
+
+\input{AEDmacros}
+\usepackage{caratula} % Version modificada para usar las macros de algo1 de ~> https://github.com/bcardiff/dc-tex
+
+
+\titulo{Descripci\'on del tp}
+\subtitulo{Subtítulo del tp}
+
+\fecha{\today}
+
+\materia{Materia de la carrera}
+\grupo{Grupo 42}
+
+\integrante{Apellido, Nombre1}{001/01}{email1@dominio.com}
+\integrante{Apellido, Nombre2}{002/01}{email2@dominio.com}
+\integrante{Apellido, Nombre3}{003/01}{email3@dominio.com}
+\integrante{Apellido, Nombre4}{004/01}{email4@dominio.com}
+% Pongan cuantos integrantes quieran
+
+% Declaramos donde van a estar las figuras
+% No es obligatorio, pero suele ser comodo
+\graphicspath{{../static/}}
+
+\begin{document}
+
+\maketitle
+
+\section{Ejemplo de sección}
+\subsection{Subsección: ambientes comunes de \LaTeX}
+
+Lo principal: las fórmulas. Se puede poner en una linea, como $x_i = x_{i-1} + x_{i-2}$, o ponerse más grande:
+
+\begin{equation}
+	\sum\limits_{i=0}^{n} i
+	\label{eq:1}
+\end{equation}
+
+Y se pueden citar ecuaciones con \verb|\eqref{nombreDeEq}|: \eqref{eq:1}
+
+Ejemplo de itemizado:
+
+\begin{itemize}
+	\item Item 1
+	\item Item 2
+	\item Item 3
+\end{itemize}
+
+Ejemplo de enumerado con menor distancia entre items:
+
+\begin{enumerate} \setlength\itemsep{0cm}
+	\item Item 1
+	\item Item 2
+	\item Item 3
+\end{enumerate}
+
+Podemos escribir mucho texto. Mucho texto. Mucho texto. Mucho texto. Mucho texto. Mucho texto. Mucho texto. Mucho texto. Mucho texto. Mucho texto. Mucho texto.
+
+Otro párrafo. Otro párrafo. Otro párrafo. Otro párrafo. Otro párrafo. Otro párrafo. Otro párrafo. Otro párrafo. Otro párrafo. Otro párrafo. Otro párrafo. Otro párrafo. Otro párrafo.
+
+\vspace{0.3cm}
+
+Le agregamos una separación entre párrafos. Le agregamos una separación entre párrafos. Le agregamos una separación entre párrafos. Le agregamos una separación entre párrafos. Le agregamos una separación entre párrafos.
+
+\vspace{0.3cm}
+
+La tabla \ref{tab:ejemplo} es un ejemplo de cómo se hace una tabla.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{||l c c r||} 
+		\hline
+		Col1 & Col2 & Col2 & Col3 \\ [0.5ex] 
+		\hline\hline
+		1 & 6 & 87837 & 787 \\ 
+		2 & 7 & 78 & 5415 \\
+		3 & 545 & 778 & 7507 \\
+		4 & 545 & 18744 & 7560 \\
+		5 & 88 & 788 & 6344 \\
+		\hline
+	\end{tabular}
+	\caption{Ejemplo de tabla}
+	\label{tab:ejemplo}
+\end{table}
+
+
+La figura \ref{fig:subfigs} es un ejemplo de cómo se agrega una imagen.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.6\textwidth]{logo_dc.jpg}
+	\caption{Ejemplo de figura}
+	\label{fig:ejemplo}
+\end{figure}
+
+\begin{figure}[ht!]
+	\begin{subfigure}{0.5\textwidth}
+		\includegraphics[width=0.9\linewidth]{LaTeX-project} 
+		\caption{Logo de LaTeX}
+		\label{fig:subfig1}
+	\end{subfigure}
+	\begin{subfigure}{0.5\textwidth}
+		\includegraphics[width=0.7\linewidth]{TeX}
+		\caption{Logo de TeX}
+		\label{fig:subfig2}
+	\end{subfigure}
+	\caption{Ejemplo para poner dos figuras juntas. Y citarlas por separado a (\subref{fig:subfig1}) y (\subref{fig:subfig2}).}
+	% OJO: el caption siempre va antes del label
+	\label{fig:subfigs}
+\end{figure}
+
+
+
+% Para hacer que quede todo en una misma linea, se puede usar minipage
+%\begin{minipage}[t]{\textwidth}
+	\begin{lstlisting}[caption={Ejemplo de código (usando los estilos de la cátedra, ver las macros para más detalles)},label=code:for]
+res := 0;
+i := 0;
+while (i < s.size()) do
+	res := res + s[i];
+	i := i + 1
+endwhile
+	\end{lstlisting}
+%\end{minipage}
+
+Si se pone un label al \verb|lstlisting|, se puede referenciar: Código \ref{code:for}.
+
+
+\subsection{Macros de la cátedra para especificar}
+
+\begin{proc}{nombre}{\In paramIn : \nat, \Inout paramInout : \TLista{\ent}}{tipoRes}
+	%    \modifica{parametro1, parametro2,..}
+	\requiere{expresionBooleana1}
+	\asegura{expresionBooleana2}
+	\aux{auxiliar1}{parametros}{tipoRes}{expresion}
+	\pred{pred1}{parametros}{expresion} 
+\end{proc}
+
+\aux{auxiliarSuelto}{parametros}{tipoRes}{expresion}
+% \paraTodo{variable}{tipo}{expresion}
+% \existe{variable}{tipo}{expresion}
+% Pueden tener [unalinea] para que no se divida en varias lineas
+\pred{predSuelto}{parametros}{\paraTodo[unalinea]{variable}{tipo}{algo \implicaLuego expresion}}
+\pred{predSuelto}{parametros}{\existe[unalinea]{variable}{tipo}{algo \yLuego expresion}}
+
+
+
+\end{document}

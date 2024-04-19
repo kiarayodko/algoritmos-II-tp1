@@ -1,0 +1,24 @@
+\aux{fondoMonetario}{recursos:\TLista{\float}, cooperan:\TLista{Bool}} {\float}
+{
+$\sum\limits_{i=0}\limits^{|recursos|-1}$ if cooperan[i]=true then recursos[i] else 0 
+}
+\vspace{0.2cm}
+
+\aux{gananciaXApuesta}{i:\nat, j:\nat, a:\TLista{\TLista{\float}}, p:\TLista{\TLista{\float}}, e:\TLista{\TLista{\nat}}, t:\TLista{\TLista{\float}}}{\float}
+{
+t[i][j-1] * p[i][e[i][j-1]] * a[i][e[i][j-1]]
+}
+\vspace{0.2cm}
+
+\aux{fondoCom\'un}{j:\nat,w:\TLista{\bool} a:\TLista{\TLista{\float}}, p:\TLista{\TLista{\float}},e:\TLista{\TLista{\nat}}, t:\TLista{\TLista{\float}}}{\float}
+{
+$\sum\limits_{i=0}\limits^{|w|}$ if w[i]=true then gananciaXApuesta(i,j,a,p,e,t) else 0 fi
+}
+\vspace{0.2cm}
+
+\aux{pagoActualizado}{i:\nat, w:\TLista{\bool} j:\nat, a:\TLista{\TLista{\float}}, p:\TLista{\TLista{\float}}, e:\TLista{\TLista{\nat}}, t:\TLista{\TLista{\float}}}{\float}
+{
+\IfThenElse{w[i]=true}{\frac{fondoCom\'un(j,w,a,p,e,t)}{|w|}}{ \frac{fondoCom\'un(j,w,a,p,e,t)}{|w|} + gananciaXApuesta(i,j,a,p,e,t)}
+}
+
+

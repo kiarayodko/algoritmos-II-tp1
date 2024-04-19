@@ -6,5 +6,3 @@ a ver
 a ver
 
 me voy a pasar a duendologia :)
-.
-JIOASDIJASDS
