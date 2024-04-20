@@ -1,6 +1,6 @@
 \begin{proc}{redistribucionDeLosFrutos}{\In recursos : \TLista{\float}, \In cooperan : \TLista{\Bool}}{\TLista{\float}}
 	
-	\requiere{|recursos|=|cooperan|}
+	\requiere{|recursos|=|cooperan| \wedge todosPositivos(recursos)}
 	\asegura{{\paraTodo[unalinea]{i}{\ent}{0\leq i < |recursos| \implicaLuego  \IfThenElse{cooperan[i]}{res[i]= \frac{fondoMonetario}{|recursos|}}{res[i]= \frac{fondoMonetario}{|recursos|}+
  
  recursos[i]}}}}
