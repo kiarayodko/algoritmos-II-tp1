@@ -1,0 +1,27 @@
+\begin{itemize}
+    \item I \wedge f_v \leq 0 \rightarrow \neg B
+\end{itemize}
+
+\equiv 0 \leq i \leq |eventos| \wedge res=recurso (apuesta_c pago_c)^{\#(subseq (eventos,0,i),T)} (apuesta_s pago_s)^{\#(subseq (eventos,0,i),F)} \wedge 
+
+|eventos|-i\leq 0 \longrightarrow \neg (i<|eventos|)
+\vspace{0.3cm}
+
+\equiv 0 \leq i \leq |eventos| \wedge |eventos| \leq i \wedge 
+
+res=recurso (apuesta_c pago_c)^{\#(subseq (eventos,0,i),T)} (apuesta_s pago_s)^{\#(subseq (eventos,0,i),F)} \longrightarrow \neg (i<|eventos|)
+\vspace{0.3cm}
+
+\equiv i=|eventos| \wedge res=recurso (apuesta_c pago_c)^{\#(subseq (eventos,0,i),T)} (apuesta_s pago_s)^{\#(subseq (eventos,0,i),F)} \longrightarrow 
+
+\neg (i<|eventos|)
+\vspace{0.3cm}
+
+\equiv i=|eventos| \longrightarrow \neg (i<|eventos|)
+\vspace{0.3cm}
+
+\equiv i=|eventos| \longrightarrow  (i \geq |eventos|)
+\vspace{0.3cm}
+
+\equiv True
+

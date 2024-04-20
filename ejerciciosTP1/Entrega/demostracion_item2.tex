@@ -1,0 +1,171 @@
+\begin{itemize}
+    \item{\{I \wedge B\} S \{I\}}
+\end{itemize}
+\vspace{0.2cm}    
+
+wp (S,I)
+\vspace{0.2cm}
+
+\equiv wp (if...;i = i + 1,I) 
+\vspace{0.2cm}
+
+\equiv wp (if...,\underline{wp(i = i + 1,I)} 
+\vspace{0.8cm}
+
+\underline{C\'alculo\hspace{3}Auxiliar}
+\vspace{0.2cm}
+
+wp(i =i+1, I)
+\vspace{0.2cm}
+
+\equiv wp(i=i+1,0\leq i \leq |eventos| \wedge res = recurso*(apuestas_c*pagos_c)^{\#(subSeq(eventos,0,i),T)}*
+\vspace{0.2cm}
+
+(apuestas_s*pagos_s)^{\#(subSeq(eventos,0,i),F)})
+\vspace{0.2cm}
+
+\equiv 0 \leq i+1 \leq|eventos| \wedge res = recurso*(apuestas_c*pagos_c)^{\#(subSeq(eventos,0,i+1),T)}*
+\vspace{0.2cm}
+
+(apuestas_s*pagos_s)^{\#(subSeq(eventos,0,i+1),F)}
+\vspace{0.4cm}
+
+Llamo\hspace{3}a\hspace{3}esta\hspace{3}expresion\hspace{3}\Delta
+\vspace{0.4cm}
+
+\underline{Retomamos}
+\vspace{0.4cm}
+
+\equiv wp(if..., \Delta)}
+\vspace{0.2cm}
+
+\equiv 0\leq i < |eventos| \wedge ((e[i] \wedge wp(res = res*apuestas_c*pagos_c ,\Delta) \vee 
+(\neg e[i] \wedge wp(res = res*apuestas_s*pagos_s, ·\Delta)
+\vspace{0.4cm}
+
+\underline{Resolvemos\hspace{3}por\hspace{3}separado:}
+\vspace{0.4cm}
+
+eventos[i] \wedge wp(res = res*apuestas_c*pagos_c ,\Delta) 
+\vspace{0.2cm}
+
+\equiv eventos[i] \wedge -1\leq i \leq |eventos|-1 \wedge res *apuestas_c*pagos_c = recurso*(apuestas_c*pagos_c)^{\#(subSeq(eventos,0,i+1),T)}*
+\vspace{0.2cm}
+
+(apuestas_s*pagos_s)^{\#(subSeq(eventos,0,i+1),F)}
+\vspace{0.2cm}
+
+\equiv eventos[i] \wedge -1\leq i \leq |eventos|-1 \wedge res = recurso*(apuestas_c*pagos_c)^{\#(subSeq(eventos,0,i+1),T)-1}* 
+\vspace{0.2cm}
+
+(apuestas_s*pagos_s)^{\#(subSeq(eventos,0,i+1),F)}
+\vspace{0.4cm}
+
+Llamo\hspace{3}a\hspace{3}esto\hspace{3}\star
+\vspace{0.4cm}
+
+\neg eventos[i] \wedge wp(res = res*apuestas_c*pagos_c ,\Delta) 
+\vspace{0.2cm}
+
+\equiv \neg eventos[i] \wedge -1\leq i \leq |eventos|-1 \wedge res *apuestas_s*pagos_s = recurso*(apuestas_s*pagos_s)^{\#(subSeq(eventos,0,i+1),T)}*
+\vspace{0.2cm}
+
+(apuestas_s*pagos_s)^{\#(subSeq(eventos,0,i+1),F)}
+\vspace{0.2cm}
+
+\equiv \neg eventos[i] \wedge -1\leq i \leq |eventos|-1 \wedge res = recurso*(apuestas_c*pagos_c)^{\#(subSeq(eventos,0,i+1),T)}* 
+\vspace{0.2cm}
+
+(apuestas_s*pagos_s)^{\#(subSeq(eventos,0,i+1),F-1)}
+\vspace{0.4cm}
+
+Llamo\hspace{3}a\hspace{3}esto\hspace{3}\heartsuit
+\vspace{0.4cm}
+
+\underline{Finalmente:}
+\vspace{0.4cm}
+
+\equiv 0\leq i < |eventos| \wedge (\star \vee \heartsuit)
+\vspace{0.2cm}
+
+\equiv ( 0\leq i < |eventos| \wedge ((eventos[i] \wedge res = recurso*(apuestas_c*pagos_c)^{\#(subSeq(eventos,0,i+1),T)-1}*
+\vspace{0.2cm}
+
+(apuestas_s*pagos_s)^{\#(subSeq(eventos,0,i+1),F)}) \vee (\neg eventos[i] \wedge  res = recurso*(apuestas_c*pagos_c)^{\#(subSeq(eventos,0,i+1),T)}*
+\vspace{0.2cm}
+
+(apuestas_s*pagos_s)^{\#(subSeq(eventos,0,i+1),F-1)}
+\vspace{0.4cm}
+
+Lo\hspace{3}que\hspace{3}obtuvimos\hspace{3}finalmente\hspace{3}es\hspace{3}la\hspace{3}wp.
+\vspace{0.2cm}
+
+\underline{UltimoPaso:}
+
+{Hay\hspace{3}que\hspace{3}ver\hspace{3}si\hspace{3}I\wedge B \rightarrow wp
+\vspace{0.6cm}
+
+ 0\leq i <|eventos| \wedge res = recurso*(apuestas_c*pagos_c)^{\#(subSeq(eventos,0,i),T)}*(apuestas_s*pagos_s)^{\#(subSeq(eventos,0,i),F)}
+ \vspace{0.2cm}
+
+\equiv True\hspace{6}(Estamos\hspace{3}asumiendo\hspace{3}que\hspace{3}I\wedge B\hspace{3}es\hspace{3}True.)
+\vspace{0.4cm}
+
+Como\hspace{3}i\hspace{3}esta\hspace{3}en\hspace{3}rango,\hspace{3}hay\hspace{3}dos\hspace{3}opciones:
+\hspace{3}
+
+1)eventos[i]=True:
+\vspace{0.2cm}
+
+Miramos\hspace{3}la\hspace{3}parte\hspace{3}de\hspace{3}\star\hspace{3}en\hspace{3}la\hspace{3}wp:
+\vspace{0.4cm}
+
+ res = recurso*(apuestas_c*pagos_c)^{\#(subSeq(eventos,0,i),T)}*(apuestas_s*pagos_s)^{\#(subSeq(eventos,0,i),F)})
+\vspace{0.2cm}
+
+\rightarrow res = recurso*(apuestas_c*pagos_c)^{\#(subSeq(eventos,0,i+1),T)-1}*(apuestas_s*pagos_s)^{\#(subSeq(eventos,0,i+1),F)})
+\vspace{0.4cm}
+
+Esto\hspace{3}es\hspace{3}una\hspace{3}tautolog\'ia,\hspace{3}ya\hspace{3}que\hspace{3}estamos\hspace{3}en\hspace{3}el\hspace{3}caso\hspace{3}eventos[i]=True,\hspace{3}entonces\hspace{3}hacer\hspace{3}el\hspace{3}c\'alculo\hspace{3}para\hspace{3}res\hspace{3}mirando\hspace{3}la
+\vspace{0.1cm}
+
+subsecuencia\hspace{3}hasta\hspace{3}i+1\hspace{3}(exclusive)\hspace{3}y\hspace{3}restarle\hspace{3}1\hspace{3}al\hspace{3}exponente\hspace{3}de\hspace{3}apuestas_c*pagos_c\hspace{3}es\hspace{3}lo\hspace{3}mismo\hspace{3}que\hspace{3}hacer\hspace{3}el\hspace{3}c\'alculo
+\vspace{0.1cm}
+
+para\hspace{3}res\hspace{3}mirando\hspace{3}la\hspace{3}subsecuencia\hspace{3}hasta\hspace{3}i\hspace{3}(exclusive).\hspace{3}Esto\hspace{3}se\hspace{3}debe\hspace{3}a\hspace{3}que\hspace{3}si\hspace{3}inclu\'imos\hspace{3}a\hspace{3}la\hspace{3}posici\'on\hspace{3}i\hspace{3}en\hspace{3}la\hspace{3}subsecuencia,
+\vspace{0.1cm}
+
+True\hspace{3}tendr\'a\hspace{3}una\hspace{3}aparici\'on\hspace{3}m\'as.
+\vspace{0.4cm}
+
+2)eventos[i]=False:
+\vspace{0.2cm}
+
+Miramos\hspace{3}la\hspace{3}parte\hspace{3}de\hspace{3}\heartsuit\hspace{3}en\hspace{3}la\hspace{3}wp:
+\vspace{0.4cm}
+
+res = recurso*(apuestas_c*pagos_c)^{\#(subSeq(eventos,0,i),T)}(apuestas_s*pagos_s)^{\#(subSeq(eventos,0,i),F)})
+\vspace{0.2cm}
+
+\rightarrow res = recurso*(apuestas_c*pagos_c)^{\#(subSeq(eventos,0,i+1),T)}*(apuestas_s*pagos_s)^{\#(subSeq(eventos,0,i+1),F)-1})
+\vspace{0.4cm}
+
+Esto\hspace{3}es\hspace{3}una\hspace{3}tautolog\'ia,\hspace{3}ya\hspace{3}que\hspace{3}estamos\hspace{3}en\hspace{3}el\hspace{3}caso\hspace{3}eventos[i]=False,\hspace{3}entonces\hspace{3}hacer\hspace{3}el\hspace{3}c\'alculo\hspace{3}para\hspace{3}res\hspace{3}mirando\hspace{3}la
+\vspace{0.1cm}
+
+subsecuencia\hspace{3}hasta\hspace{3}i+1\hspace{3}(exlusive)\hspace{3}y\hspace{3}restarle\hspace{3}1\hspace{3}al\hspace{3}exponente\hspace{3}de\hspace{3}apuestas_s*pagos_s\hspace{3}es\hspace{3}lo\hspace{3}mismo\hspace{3}que\hspace{3}hacer\hspace{3}el\hspace{3}c\'alculo
+\vspace{0.1cm}
+
+para\hspace{3}res\hspace{3}mirando\hspace{3}la\hspace{3}subsecuencia\hspace{3}hasta\hspace{3}i\hspace{3}(exlcusive).\hspace{3}Esto\hspace{3}se\hspace{3}debe\hspace{3}a\hspace{3}que\hspace{3}si\hspace{3}inclu\'imos\hspace{3}a\hspace{3}la\hspace{3}posici\'on\hspace{3}i\hspace{3}en\hspace{3}la\hspace{3}subsecuencia,
+\vspace{0.1cm}
+
+False\hspace{3}tendr\'a\hspace{3}una\hspace{3}aparici\'on\hspace{3}m\'as.
+\vspace{0.4cm}
+
+\underline{Conclusi\'on:}
+\vspace{0.2cm}
+
+I\wedge B \rightarrow wp
+
+
+

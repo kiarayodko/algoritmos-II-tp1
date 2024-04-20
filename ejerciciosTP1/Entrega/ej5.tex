@@ -1,0 +1,15 @@
+\begin{proc}{maximizarApuestas}{\In Individuo : \nat, \In recursos : \TLista{\float},\In Cooperan :     \TLista{\bool},\Inout Apuestas : \TLista{\TLista{\float}},\\ \phantom{.}\In Pagos: \TLista{\TLista{\float}},  \In Eventos: \TLista{\TLista{\nat}}}{tipoRes}
+	%    \modifica{parametro1, parametro2,..}
+	\requiere{Apuestas=L0 \wedge |cooperan| = |trayectorias| = |apuestas| = |pagos| = |eventos| \wedge todosPositivosListas\\(apuestas)\wedge todosPositivosListas(pagos) \wedge todosSuman1(apuestas) \wedge 0 \leq Individuo \leq |Recursos|}
+ 
+	\asegura{\paraTodo[unalinea]{w}{\TLista{\TLista{\float}}}{|w|=|recursos| \\ \wedge todosIgExcepto3(w,L0,individui)\wedge todosIgExcepto(apuestas,L0,individuos)\\
+    \wedge todosPositivos(w[individuos]\wedge todosPositivos(apuestas[individuos]\\
+    \wedge todosSuman1(w[individuos]\wedge todosSuman1(apuestas[individuos])\\
+    \wedge \existe[unalinea]{s,t}{\TLista{\TLista{\float}}}{esTrayectoria(recursos,cooperan,apuestas,pagos,eventos,s}  \\ \wedge esTrayectoria(recursos,cooperan,w,pagos,eventos,t}\implicaLuego \\(s [individuos][|s[individuos]|-1] \geq t[individuos0][|t[individuos]|-1]
+    }
+\phantom{.} \\
+\end{proc}
+    
+\pred{todosIgExcepto3}{w,a : \TLista{\TLista{\float}},n:\nat}
+    {w[n] \neq a[n] \wedge {\paraTodo[unalinea]{i}{\ent}{0 \leq i \ |w| \wedge i\neq n \yLuego w[i]=a[i]}}
+    }

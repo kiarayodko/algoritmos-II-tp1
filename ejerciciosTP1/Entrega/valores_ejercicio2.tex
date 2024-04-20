@@ -1,0 +1,19 @@
+
+
+ P_c \equiv res=recurso \wedge i=0 \wedge apuesta_c+apuesta_s=1 \wedge pago_c>0 \wedge pago_s>0 \wedge apuesta_c>0 \wedge apuesta_s>0 \wedge recurso>0
+
+ 
+\vspace{0.2cm}
+Q_c \equiv res=recurso (apuesta_c pago_c)^{\#(eventos,T)} (apuesta_s pago_s)^{\#(eventos,F)}
+\vspace{0.2cm}
+
+
+I \equiv 0 \leq i \leq |eventos| \wedge res=recurso (apuesta_c pago_c)^{\#(subseq (eventos,0,i),T)} (apuesta_s pago_s)^{\#(subseq (eventos,0,i),F)}
+
+
+\vspace{0.2cm}
+f_v \equiv |eventos|-i
+
+
+\vspace{0.2cm}
+B \equiv i<|eventos|

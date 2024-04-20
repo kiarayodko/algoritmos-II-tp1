@@ -1,0 +1,32 @@
+\begin{itemize}
+    \item I \wedge \neg B \rightarrow Q_c
+\end{itemize}
+
+\equiv 0 \leq i \leq |eventos| \wedge res=recurso (apuesta_c pago_c)^{\#(subseq (eventos,0,i),T)} (apuesta_s pago_s)^{\#(subseq (eventos,0,i),F)} \wedge 
+
+\neg (i<|eventos|) \longrightarrow res=recurso (apuesta_c pago_c)^{\#(eventos,T)} (apuesta_s pago_s)^{\#(eventos,F)}
+
+\vspace{0.3cm}
+
+\equiv i=|eventos| \wedge res=recurso (apuesta_c pago_c)^{\#(subseq (eventos,0,i),T)} (apuesta_s pago_s)^{\#(subseq (eventos,0,i),F)}\longrightarrow 
+
+res=recurso (apuesta_c pago_c)^{\#(eventos,T)} (apuesta_s pago_s)^{\#(eventos,F)}
+
+\vspace{0.3cm}
+
+\equiv i=|eventos| \wedge res=recurso (apuesta_c pago_c)^{\#(subseq (eventos,0,|eventos|),T)} (apuesta_s pago_s)^{\#(subseq (eventos,0,|eventos|),F)}\longrightarrow 
+
+res=recurso (apuesta_c pago_c)^{\#(eventos,T)} (apuesta_s pago_s)^{\#(eventos,F)}
+
+\vspace{0.3cm}
+\equiv res=recurso (apuesta_c pago_c)^{\#(eventos,T)} (apuesta_s pago_s)^{\#(eventos,F)}\longrightarrow 
+
+res=recurso (apuesta_c pago_c)^{\#(eventos,T)} (apuesta_s pago_s)^{\#(eventos,F)
+
+\vspace{0.3cm}
+
+\equiv Q_c \longrightarrow Q_c
+
+\vspace{0.3cm}
+
+\equiv True
