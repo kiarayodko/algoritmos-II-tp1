@@ -49,14 +49,14 @@ S= if then else... ; i = i + 1
 
 \vspace{0.8cm}
 
- \underline{Busco Implicacion:}
+ \underline{Busco Implicaci\'on:}
 
 \vspace{0.3cm}
 
-\equiv 0\leq i \leq |eventos| \yLuego res= recursos(apuesta_s * pagos_s)^{\#apariciones(subseq(eventos,0,i)}
+\equiv 0\leq i \leq |eventos| \yLuego res= recursos(apuesta_s * pagos_s)^{\#apariciones(subseq(eventos,0,i),F)}
 
 \vspace{0.2cm}
-*\phantom{.} (apuesta_c * pagos_c)^{\#apariciones(subseq(eventos,0,i)} \wedge i \in |eventos| \wedge Vo = |eventos|-i \rightarrow 0\leq i < |eventos| \yLuego \phantom{...}\hspace{17}  
+*\phantom{.} (apuesta_c * pagos_c)^{\#apariciones(subseq(eventos,0,i),T)} \wedge i \in |eventos| \wedge Vo = |eventos|-i \rightarrow 0\leq i < |eventos| \yLuego \phantom{...}\hspace{17}  
 (|eventos|-i-1 < Vo)
 
 
