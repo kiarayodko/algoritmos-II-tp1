@@ -1,0 +1,92 @@
+\begin{itemize}
+    \item\{{ I \wedge  B \wedge  V_o =  Fv\} S \{\ Fv<\ V_o\}
+    }
+\end{itemize}
+\vspace{0.3cm}
+
+S= if then else... ; i = i + 1
+
+\vspace{0.3cm}
+
+\equiv  wp(if... ; i= i+1 , Fv < Vo)
+
+\vspace{0.3cm}
+
+\equiv wp(..., \underline{wp(i=i+1,Fv<Vo)})  
+
+\vspace{0.3cm}
+
+\underline{Resuelvo lo subrayado}
+
+\vspace{0.3cm}
+
+ \equiv wp(i=i+1,Fv<Vo) \equiv |eventos| - i - 1 < Vo
+
+\vspace{0.3cm}
+
+\underline{Luego...}
+
+\vspace{0.3cm}
+
+
+\equiv wp(if..., |eventos| -i -i < Vo)
+
+\vspace{0.3cm}
+%ACA PODRIAMOS PIONER AXIOMA 4
+
+\vspace{0.3cm}
+
+\equiv def(eventos[i]) \yLuego (eventos[i] \wedge wp(res=recurso*apuesta_c*pago_c, |eventos| -i -1<Vo))\\
+\phantom{.} \hspace{15} \vee (\neg eventos[i] \wedge wp(res=recurso*apuesta_s*pago_s, |eventos| - i -1)
+
+\vspace{0.3cm}
+
+\equiv 0 \leq i < |eventos| \yLuego (eventos[i]\wedge |eventos|-i-1 <Vo) \vee (\neg eventos[i] \wedge |eventos|-i-1 < Vo)
+
+\vspace{0.3cm}
+
+\equiv 0\leq i < |eventos| \yLuego (|eventos|-i-1 < Vo)
+
+\vspace{0.8cm}
+
+ \underline{Busco Implicacion:}
+
+\vspace{0.3cm}
+
+\equiv 0\leq i \leq |eventos| \yLuego res= recursos(apuesta_s * pagos_s)^{\#apariciones(subseq(eventos,0,i)}
+
+\vspace{0.2cm}
+*\phantom{.} (apuesta_c * pagos_c)^{\#apariciones(subseq(eventos,0,i)} \wedge i \in |eventos| \wedge Vo = |eventos|-i \rightarrow 0\leq i < |eventos| \yLuego \phantom{...}\hspace{17}  
+(|eventos|-i-1 < Vo)
+
+
+
+\vspace{0.3cm}
+
+\equiv 0\leq i <|eventos| \wedge Vo = |eventos|-i \wedge res=... \rightarrow 0\leq i < |eventos| \wedge |eventos| -1-i < Vo
+
+\vspace{0.3cm}
+
+\underline{Asumo\hspace{3}lado\hspace{3}izquierdo\hspace{3} TRUE}
+
+\vspace{0.3cm}
+
+\equiv 0\leq i < |eventos| \wedge Vo=|eventos|-i \wedge res=... \rightarrow 0\leq i <|eventos| \wedge \underline{(|eventos|-1 \cancel{-i} < |eventos| \cancel{-i})} 
+
+\vspace{0.3cm}
+
+\underline{Se cancelan las -i e i esta en rango.}
+
+\vspace{0.3cm}
+
+
+\equiv 0\leq i < |eventos| \wedge Vo=|eventos|-i \wedge res=... \rightarrow True
+
+\vspace{0.3cm}
+
+\underline{Conclusi\'on:}
+\vspace{0.2cm}
+
+I\wedge B \wedge Vo=Fv \rightarrow wp(if... ; i= i+1 , Fv < Vo)
+
+
