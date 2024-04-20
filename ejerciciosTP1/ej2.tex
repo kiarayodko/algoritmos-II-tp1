@@ -1,6 +1,6 @@
 \begin{proc}{trayectoriaDeLosFrutosIndividualesALargoPlazo}{\Inout trayectorias :\TLista{\TLista{\float}}, \In cooperan:\TLista{\Bool},\In apuestas: \TLista{\TLista{\float}}, \In pagos: \TLista{\TLista{\float}}, \In eventos: \TLista{\TLista{\nat}}}
 
-    \requiere{esTrayectoria_2=T_0  \hspace{2}\wedge \hspace{2}|cooperan| = |trayectorias| = |apuestas| = |pagos| = |eventos| \wedge todosPositivosListas\\(apuestas)\wedge todosPositivosListas(pagos)}
+    \requiere{trayectorias=T_0  \hspace{2}\wedge \hspace{2}|cooperan| = |trayectorias| = |apuestas| = |pagos| = |eventos| \wedge todosPositivosListas\\(apuestas)\wedge todosPositivosListas(pagos)}
     \asegura{esTrayectoria_2(trayectoria,cooperan,apuestas,pagos,eventos)}
 
 \end{proc}
