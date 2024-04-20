@@ -12,7 +12,8 @@ t[i][j-1] * p[i][e[i][j-1]] * a[i][e[i][j-1]]
 
 \aux{fondoCom\'un}{j:\nat,w:\TLista{\bool} a:\TLista{\TLista{\float}}, p:\TLista{\TLista{\float}},e:\TLista{\TLista{\nat}}, t:\TLista{\TLista{\float}}}{\float}
 {
-$\sum\limits_{i=0}\limits^{|w|}$ if w[i]=true then gananciaXApuesta(i,j,a,p,e,t) else 0 fi
+$\sum\limits_{i=0}\limits^{|w|-1}$ if w[i]=true then
+gananciaXApuesta(i,j,a,p,e,t) else 0 fi
 }
 \vspace{0.2cm}
 
@@ -21,4 +22,8 @@ $\sum\limits_{i=0}\limits^{|w|}$ if w[i]=true then gananciaXApuesta(i,j,a,p,e,t)
 \IfThenElse{w[i]=true}{\frac{fondoCom\'un(j,w,a,p,e,t)}{|w|}}{ \frac{fondoCom\'un(j,w,a,p,e,t)}{|w|} + gananciaXApuesta(i,j,a,p,e,t)}
 }
 
+\aux{suma}{s:\TLista{\float}}{\float}
+{
+$\sum\limits_{i=0}\limits^{|s|-1}$ s[i]
+}
 
