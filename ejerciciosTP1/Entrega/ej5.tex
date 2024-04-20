@@ -2,10 +2,10 @@
 	%    \modifica{parametro1, parametro2,..}
 	\requiere{Apuestas=L0 \wedge |cooperan| = |trayectorias| = |apuestas| = |pagos| = |eventos| \wedge todosPositivosListas\\(apuestas)\wedge todosPositivosListas(pagos) \wedge todosSuman1(apuestas) \wedge 0 \leq Individuo \leq |Recursos|}
  
-	\asegura{\paraTodo[unalinea]{w}{\TLista{\TLista{\float}}}{|w|=|recursos| \\ \wedge todosIgExcepto3(w,L0,individui)\wedge todosIgExcepto(apuestas,L0,individuos)\\
-    \wedge todosPositivos(w[individuos]\wedge todosPositivos(apuestas[individuos]\\
-    \wedge todosSuman1(w[individuos]\wedge todosSuman1(apuestas[individuos])\\
-    \wedge \existe[unalinea]{s,t}{\TLista{\TLista{\float}}}{esTrayectoria(recursos,cooperan,apuestas,pagos,eventos,s}  \\ \wedge esTrayectoria(recursos,cooperan,w,pagos,eventos,t}\implicaLuego \\(s [individuos][|s[individuos]|-1] \geq t[individuos0][|t[individuos]|-1]
+	\asegura{\paraTodo[unalinea]{w}{\TLista{\TLista{\float}}}{|w|=|recursos| \\ \wedge todosIgExcepto3(w,L0,individuo)\wedge todosIgExcepto(apuestas,L0,individuo)\\
+    \wedge todosPositivos(w[individuo])\wedge todosPositivos(apuestas[individuo])\\
+    \wedge todosSuman1(w)\wedge todosSuman1(apuestas)\\
+    \wedge \existe[unalinea]{s,t}{\TLista{\TLista{\float}}}{esTrayectoria(recursos,cooperan,apuestas,pagos,eventos,s}  \\ \wedge esTrayectoria(recursos,cooperan,w,pagos,eventos,t}\implicaLuego \\(s [individuo][|s[individuo]|-1] \geq t[individuo0][|t[individuo]|-1])))
     }
 \phantom{.} \\
 \end{proc}
