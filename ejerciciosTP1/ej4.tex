@@ -13,5 +13,5 @@
 \end{proc}
 
 \pred{individuoEst\'aCooperando}{w : \TLista{\bool}, i : \nat, c : \TLista{\bool}}{
-\paraTodo[unalinea]{j}{\ent}{0 \leq j < |s| \wedge i\neq j \implicaLuego w[i] = c[i]} \wedge w[i]=True
+|c|=|w| \yLuego \paraTodo[unalinea]{j}{\ent}{0 \leq j < |c| \wedge i\neq j \implicaLuego w[i] = c[i]} \wedge w[i]=True
 }	
