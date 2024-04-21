@@ -1,5 +1,5 @@
 
-\begin{proc}{trayectoriaExtrañaEscalera}{\Inout trayectoria : \TLista{\ent}}{Bool}
+\begin{proc}{trayectoriaExtrañaEscalera}{\In trayectoria : \TLista{\float}}{Bool}
 	
 	\requiere{True}
 	\asegura{{\existe[unalinea]{i}{\ent}{0\leq i < |trayectoria| \yLuego{\paraTodo[unalinea]{j,k}{\ent}{{(1\leq k \leq i \implicaLuego trayectoria[k-1] < trayectoria[k])}
