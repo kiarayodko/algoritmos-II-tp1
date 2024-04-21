@@ -1,4 +1,4 @@
-\begin{proc}{redistribucionDeLosFrutos}{\In recursos : \TLista{\float}, \In cooperan : \TLista{\Bool}}{\TLista{\float}}
+\begin{proc}{redistribucionDeLosFrutos}{\In recursos : \TLista{\float}, \In cooperan : \TLista{\bool}}{\TLista{\float}}
 	
 	\requiere{|recursos|=|cooperan| \wedge todosPositivos(recursos)}
 	\asegura{{\paraTodo[unalinea]{i}{\ent}{0\leq i < |recursos| \implicaLuego{
