@@ -5,7 +5,7 @@
 
 \pred{esTrayectoria_2}{t_0:\TLista{\TLista{\float}},w:\TLista{\bool},a:\TLista{\TLista{\float}},p:\TLista{\TLista{\float}},e:\TLista{\TLista{\nat}},t:\TLista{\TLista{\float}}}
     {|t|=|t_0| \yLuego \paraTodo[unalinea]{i}{\ent}{0\leq i < |t| \implicaLuego t[i][0]=t_0[i][0]}\\
-    \wedge \paraTodo[unalinea]{i}{\ent}{0\leq i < |t| \implicaLuego |t[i]|=|e|+1}\wedge |t|=|t_0|  \\\yLuego \paraTodo[unalinea]{i,j}{\ent}{0\leq i <|t| \wedge 0<j<|t[i]| \implicaLuego t[i][j]=pagoActualizado(i,j,w,a,p,e,t}{}
+    \wedge \paraTodo[unalinea]{i}{\ent}{0\leq i < |t| \implicaLuego |t[i]|=|e|+1}\wedge   \\\yLuego \paraTodo[unalinea]{i,j}{\ent}{0\leq i <|t| \wedge 0<j<|t[i]| \implicaLuego t[i][j]=pagoActualizado(i,j,w,a,p,e,t}{}
     }
 
 \pred{todosPositivos}{s:\TLista{\float}}
