@@ -8,7 +8,7 @@
      {indivduoEstaCoopeando(w,individuo,Co) \\
      
      \wedge
-     \neg individuoEstaCooperando(v,individuo,Co) \\ \wedge 
+     individuoNoEstaCooperando(v,individuo,Co) \\ \wedge 
      \existe[unalinea]{s,t}{\TLista{\TLista{\float}}}{esTrayectoria(recursos,w,apuestas,pagos,eventos,s)  \\ \wedge
      esTrayectoria(recursos,v,apuestas,pagos,eventos,t)\\
      \yLuego  s[individuo][|s[individuo]|-1] 	\geq t[individuo][|t[individuo]|-1] }}}}
@@ -17,5 +17,9 @@
 \end{proc}
 
 \pred{individuoEst\'aCooperando}{w : \TLista{\bool}, i : \nat, c : \TLista{\bool}}{
-|c|=|w| \yLuego \paraTodo[unalinea]{j}{\ent}{0 \leq j < |c| \wedge i\neq j \implicaLuego w[i] = c[i]} \wedge w[i]=True
-}		
+|c|=|w| \yLuego \paraTodo[unalinea]{j}{\ent}{0 \leq j < |c| \wedge i\neq j \implicaLuego w[j] = c[j]} \wedge w[i]=True
+}
+
+\pred{individuoNoEst\'aCooperando}{v : \TLista{\bool}, i : \nat, c : \TLista{\bool}}{
+|c|=|v| \yLuego \paraTodo[unalinea]{j}{\ent}{0 \leq j < |c| \wedge i\neq j \implicaLuego v[j] = c[j]} \wedge v[i]=False
+}
