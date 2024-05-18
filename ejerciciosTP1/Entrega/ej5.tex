@@ -1,6 +1,6 @@
 \begin{proc}{maximizarApuestas}{\In Individuo : \nat, \In recursos : \TLista{\float},\In Cooperan :     \TLista{\bool},\Inout Apuestas : \TLista{\TLista{\float}},\\ \phantom{.}\In Pagos: \TLista{\TLista{\float}},  \In Eventos: \TLista{\TLista{\nat}}}{tipoRes}
 	%    \modifica{parametro1, parametro2,..}
-	\requiere{Apuestas=L0 \wedge |cooperan| = |trayectorias| = |apuestas| = |pagos| = |eventos| \wedge todosPositivosListas\\(apuestas)\wedge todosPositivosListas(pagos) \wedge todosSuman1(apuestas) \wedge 0 \leq Individuo \leq |Recursos|}
+	\requiere{Apuestas=L0 \wedge |cooperan| = |trayectorias| = |apuestas| = |pagos| = |eventos| \wedge todosPositivosListas\\(apuestas)\wedge todosPositivosListas(pagos) \wedge todosSuman1(apuestas) \wedge 0 \leq Individuo \leq |Recursos| \hspace{2}\wedge \hspace{2} tienenMismaLong(apuestas,pagos) \hspace{2}\wedge \hspace{2} tienenMismaLong(pagos,eventos) }
  
 	\asegura{\paraTodo[unalinea]{w}{\TLista{\TLista{\float}}}{|w|=|recursos| \\ \wedge todosIgExcepto3(w,L0,individuo)\wedge todosIgExcepto(apuestas,L0,individuo)\\
     \wedge todosPositivos(w[individuo])\wedge todosPositivos(apuestas[individuo])\\
