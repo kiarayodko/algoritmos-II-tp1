@@ -1,6 +1,6 @@
 \begin{proc}{trayectoriaDeLosFrutosIndividualesALargoPlazo}{\Inout trayectorias :\TLista{\TLista{\float}}, \In cooperan:\TLista{\bool},\In apuestas: \TLista{\TLista{\float}}, \In pagos: \TLista{\TLista{\float}}, \In eventos: \TLista{\TLista{\nat}}}
 
-    \requiere{trayectorias=T_0  \hspace{2}\wedge \hspace{2}|cooperan| = |trayectorias| = |apuestas| = |pagos| = |eventos|  \hspace{3}  \wedge   \hspace{3} todosPositivosListas\\(apuestas)\wedge todosPositivosListas(pagos) \wedge todosSuman1(apuestas)}
+    \requiere{trayectorias=T_0  \hspace{2}\wedge \hspace{2}|cooperan| = |trayectorias| = |apuestas| = |pagos| = |eventos|  \hspace{3}  \wedge   \hspace{3} todosPositivosListas\\(apuestas)\wedge todosPositivosListas(pagos) \wedge todosSuman1(apuestas)\hspace{2}\wedge \hspace{2} tienenMismaLong(trayectorias,apuestas) \hspace{2}\wedge \hspace{2} tienenMismaLong(pagos,eventos) \hspace{2}\wedge \hspace{2} tienenMismaLong(trayectorias,eventos)}
     \asegura{esTrayectoria_2(T_0,cooperan,apuestas,pagos,eventos,trayectorias)}
 
 \end{proc}
