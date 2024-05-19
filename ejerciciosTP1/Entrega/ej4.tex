@@ -2,7 +2,9 @@
 	
      \requiere{|cooperan| = |trayectorias| = |apuestas| = |pagos| = |eventos| \\
      \wedge todosPositivosListas(apuestas)\wedge todosPositivosListas(pagos) \wedge todosSuman1(apuestas)\\
-     \wedge 0\leq individuo < | cooperan| \wedge cooperan = Co \hspace{2}\wedge \hspace{2} tienenMismaLong(apuestas,pagos) \hspace{2}\wedge \hspace{2} tienenMismaLong(pagos,eventos)}
+     \wedge 0\leq individuo < | cooperan| \wedge cooperan = Co 
+     \wedge tienenMismaLong(apuestas,pagos)\\
+     \wedge  longitud(eventos,pagos) \wedge longitud(eventos,apuestas) } }
      \asegura{|cooperan| = |Co| \yLuego \paraTodo[unalinea]{i}{\ent}{0\leq i < |cooperan| \wedge i \neq individuo \implicaLuego cooperan[i] = Co[i]} \\ \wedge 
      {cooperan[individuo] = true \iff \existe[unalinea]{v,w}{\TLista{\bool}} 
      {indivduoEstaCoopeando(w,individuo,Co) \\
